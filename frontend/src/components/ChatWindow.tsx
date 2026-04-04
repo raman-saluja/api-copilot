@@ -221,11 +221,11 @@ export default function ChatWindow() {
               </label>
               <div className="relative">
                 <input
-                  type="password"
+                  type="text"
                   value={tempApiKey}
                   onChange={(e) => setTempApiKey(e.target.value)}
                   placeholder="Enter your API key..."
-                  className="w-full pl-8 pr-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all placeholder:text-slate-400"
+                  className="w-full pl-8 pr-3 py-2 text-slate-700 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all placeholder:text-slate-400"
                 />
                 <Key
                   size={12}

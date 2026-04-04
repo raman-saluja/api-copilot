@@ -8,7 +8,7 @@ API Copilot is an AI-powered OpenAPI documentation viewer and assistant designed
 
 ### Demo
 
-![API Copilot Demo](https://via.placeholder.com/800x450.png?text=API+Copilot+Demo+GIF+Placeholder)
+![API Copilot Demo](demo.gif)
 _AI-powered chat integrated directly with your Swagger documentation._
 
 ---
