@@ -1,8 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  type ComponentPropsWithoutRef,
-} from "react";
+import { useEffect, useState, type ComponentPropsWithoutRef } from "react";
 import { codeToHtml } from "shiki";
 
 function CodeBlock({ children, className }: ComponentPropsWithoutRef<"code">) {

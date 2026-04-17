@@ -1,8 +1,6 @@
-import React from "react";
-
 export const ApiLinkRenderer = ({ href, children, ...props }: any) => {
   const decodedHref = href ? decodeURIComponent(href) : "";
-  
+
   if (decodedHref.startsWith("#api-link|")) {
     const [, method, path] = decodedHref.split("|");
     return (
@@ -12,7 +10,7 @@ export const ApiLinkRenderer = ({ href, children, ...props }: any) => {
           e.preventDefault();
           const opblocks = document.querySelectorAll(".opblock");
           let found = false;
-          
+
           for (const block of Array.from(opblocks)) {
             const methodEl = block.querySelector(".opblock-summary-method");
             const pathEl = block.querySelector(".opblock-summary-path");
@@ -41,13 +39,13 @@ export const ApiLinkRenderer = ({ href, children, ...props }: any) => {
                   "ring-indigo-500",
                   "ring-offset-2",
                   "transition-all",
-                  "duration-500"
+                  "duration-500",
                 );
                 setTimeout(() => {
                   block.classList.remove(
                     "ring-2",
                     "ring-indigo-500",
-                    "ring-offset-2"
+                    "ring-offset-2",
                   );
                 }, 2000);
               }, 100);
@@ -55,7 +53,11 @@ export const ApiLinkRenderer = ({ href, children, ...props }: any) => {
             }
           }
           if (!found) {
-            console.warn("API endpoint not found in Swagger view:", method, path);
+            console.warn(
+              "API endpoint not found in Swagger view:",
+              method,
+              path,
+            );
           }
         }}
         className="font-medium text-indigo-600 hover:text-indigo-800 underline decoration-indigo-300 underline-offset-2 transition-colors cursor-pointer inline-flex items-center gap-1"

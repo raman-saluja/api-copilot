@@ -9,9 +9,9 @@ export const generateChatResponse = async (
   chatHistory: any[] = [],
   userApiKey?: string,
 ): Promise<{ text: string; tokensUsed: number }> => {
-  const apiKey = userApiKey;
+  const apiKey = userApiKey || process.env.GEMINI_API_KEY;
   if (!apiKey) {
-    const err: any = new Error("Gemini API Key is required. Please provide it in the chat settings.");
+    const err: any = new Error("Gemini API Key is required. Please provide it in the chat settings or configure it on the server.");
     err.status = 401;
     throw err;
   }
