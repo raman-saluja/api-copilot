@@ -18,26 +18,12 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Setup Swagger Docs
 setupSwagger(app);
-
-// Serve static uploaded spec files
 app.use("/api/specs", express.static(path.join(__dirname, "../../uploads")));
-
-// Serve React App
-app.use(express.static(path.join(__dirname, "../../frontend/dist")));
-
-// Routes
 app.use("/api", apiRoutes);
 
 app.get("/", (req: Request, res: Response) => {
-  res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
-});
-
-app.use((req: Request, res: Response) => {
-  res
-    .status(404)
-    .sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
+  res.json({ message: "Welcome to API Copilot" });
 });
 
 app.listen(port, () => {

@@ -8,7 +8,7 @@ export default function SwaggerView() {
   const filename = useParams()["*"];
   const navigate = useNavigate();
 
-  const specUrl = `http://localhost:3000/api/specs/${filename}`;
+  const specUrl = `/api/specs/${filename}`;
 
   return (
     <div className="flex flex-col h-screen w-screen overflow-hidden bg-slate-50">

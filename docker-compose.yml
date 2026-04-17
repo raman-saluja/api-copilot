@@ -9,6 +9,8 @@ services:
       - "3000:3000"
     environment:
       - PORT=3000
+    volumes:
+      - api-copilot-uploads:/app/uploads
     restart: unless-stopped
 
   frontend:
@@ -16,7 +18,12 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - "3001:3001"
+    volumes:
+      - api-copilot-uploads:/usr/share/nginx/html/uploads
     depends_on:
       - backend
     restart: unless-stopped
+
+volumes:
+  api-copilot-uploads:
