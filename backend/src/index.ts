@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 setupSwagger(app);
-app.use("/api/specs", express.static(path.join(__dirname, "../../uploads")));
+app.use("/api/specs", express.static(path.join(__dirname, "./uploads")));
 app.use("/api", apiRoutes);
 
 app.get("/", (req: Request, res: Response) => {
