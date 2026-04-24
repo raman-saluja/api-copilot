@@ -14,7 +14,7 @@ import {
 import { generateChatResponse } from "../utils/gemini";
 
 const router = Router();
-const uploadDir = path.join(__dirname, "../../../uploads");
+const uploadDir = path.join(__dirname, "../uploads");
 
 // Ensure upload directory exists
 if (!fs.existsSync(uploadDir)) {
